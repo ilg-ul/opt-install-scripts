@@ -15,7 +15,7 @@ IFS=$'\n\t'
 
 HB_PREFIX=${HB_PREFIX:-"$HOME/opt/homebrew-gae"}
 
-echo "Recreating \"${HB_PREFIX}\"...
+echo "Recreating \"${HB_PREFIX}\"..."
 rm -rf "${HB_PREFIX}"
 mkdir -p "${HB_PREFIX}"
 
