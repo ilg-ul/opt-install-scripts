@@ -1,17 +1,21 @@
 #!/usr/bin/env bash
 
-if [[ ${DEBUG} != "" ]]; then
-  set -x 
+# -----------------------------------------------------------------------------
+# Safety settings (see https://gist.github.com/ilg-ul/383869cbb01f61a51c4d).
+
+if [[ ! -z ${DEBUG} ]]
+then
+  set -x # Activate the expand mode if DEBUG is anything but empty.
 fi
 
-set -o errexit 
-set -o pipefail 
-set -o nounset 
+set -o errexit # Exit if command failed.
+set -o pipefail # Exit if pipe failed.
+set -o nounset # Exit if variable not set.
 
+# Remove the initial space and instead use '\n'.
 IFS=$'\n\t'
 
-# https://gist.github.com/ilg-ul/383869cbb01f61a51c4d
-# ----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 HB_PREFIX=${HB_PREFIX:-"$HOME/opt/homebrew-gae"}
 
