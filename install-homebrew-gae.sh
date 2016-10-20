@@ -32,5 +32,29 @@ echo "Updating homebrew..."
 rm -rf "${HB_PREFIX}/share/doc/homebrew"
 brew update
 
+brew install automake
+brew install cmake
+brew install pkgconfig
+
+# Required by QEMU
+brew install gettext
+
+# TeX required to build openOCD & QEMU manuals.
+brew install Caskroom/cask/mactex
+
+# X11 headers required by QEMU (in SDL).
+brew install Caskroom/cask/xquartz
+
+# makeinfo required to build openOCD & QEMU manuals.
+brew install texinfo
+
+# /Library/TeX/texbin
+echo 'rm /etc/paths.d/TeX'
+sudo rm /etc/paths.d/TeX 
+
+# /opt/X11/bin
+echo '/etc/paths.d/40-XQuartz'
+sudo rm /etc/paths.d/40-XQuartz
+
 # To use Homebrew, add something like this to ~/.profile
 echo alias hbg=\'export PATH=${HB_PREFIX}/bin:\$PATH\'
