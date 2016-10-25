@@ -5,7 +5,9 @@
 
 if [[ ! -z ${DEBUG} ]]
 then
-  set -x # Activate the expand mode if DEBUG is anything but empty.
+  set ${DEBUG} # Activate the expand mode if DEBUG is anything but empty.
+else
+  DEBUG=""
 fi
 
 set -o errexit # Exit if command failed.
@@ -25,12 +27,16 @@ mkdir -p "${HB_PREFIX}"
 
 PATH=${HB_PREFIX}/bin:$PATH
 
-bash -c "(curl -L https://github.com/Homebrew/homebrew/tarball/master | tar -x -v --strip 1 -C "${HB_PREFIX}" -f -)"
+bash -c "(curl -L https://github.com/Homebrew/homebrew/tarball/master | \
+  tar -x -v --strip 1 -C "${HB_PREFIX}" -f -)"
+  
 brew --version
 
 echo "Updating homebrew..."
 rm -rf "${HB_PREFIX}/share/doc/homebrew"
 brew update
+
+# -----------------------------------------------------------------------------
 
 brew install automake
 brew install cmake
@@ -42,19 +48,21 @@ brew install gettext
 # TeX required to build openOCD & QEMU manuals.
 brew install Caskroom/cask/mactex
 
-# X11 headers required by QEMU (in SDL).
-brew install Caskroom/cask/xquartz
-
-# makeinfo required to build openOCD & QEMU manuals.
-brew install texinfo
-
 # /Library/TeX/texbin
 echo 'rm /etc/paths.d/TeX'
 sudo rm /etc/paths.d/TeX 
 
+# makeinfo required to build openOCD & QEMU manuals.
+brew install texinfo
+
+# X11 headers required by QEMU (in SDL).
+brew install Caskroom/cask/xquartz
+
 # /opt/X11/bin
 echo '/etc/paths.d/40-XQuartz'
 sudo rm /etc/paths.d/40-XQuartz
+
+# -----------------------------------------------------------------------------
 
 # To use Homebrew, add something like this to ~/.profile
 echo alias hbg=\'export PATH=${HB_PREFIX}/bin:\$PATH\'
