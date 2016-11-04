@@ -44,6 +44,14 @@ brew install pkgconfig
 
 # Required by QEMU
 brew install gettext
+brew link gettext --force
+
+# makeinfo required to build openOCD & QEMU manuals.
+brew install texinfo
+brew link texinfo --force
+
+if false
+then 
 
 # TeX required to build openOCD & QEMU manuals.
 brew install Caskroom/cask/mactex
@@ -52,15 +60,14 @@ brew install Caskroom/cask/mactex
 echo 'rm /etc/paths.d/TeX'
 sudo rm /etc/paths.d/TeX 
 
-# makeinfo required to build openOCD & QEMU manuals.
-brew install texinfo
-
 # X11 headers required by QEMU (in SDL).
 brew install Caskroom/cask/xquartz
 
 # /opt/X11/bin
 echo '/etc/paths.d/40-XQuartz'
 sudo rm /etc/paths.d/40-XQuartz
+
+fi
 
 # -----------------------------------------------------------------------------
 
