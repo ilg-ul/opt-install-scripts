@@ -1,6 +1,6 @@
 # install-opt
 
-This is a collection of scripts, used to install optional tools, used during builds.
+This is a collection of scripts, used to install optional tools, required during builds.
 
 The strategy is to allow separate updates for separate builds, otherwise updating the tools for a build may affect other builds.
 
