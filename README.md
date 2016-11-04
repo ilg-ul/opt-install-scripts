@@ -72,7 +72,7 @@ $ alias hbgcc='export PATH=$HOME/opt/homebrew-gcc/bin:$PATH'
 
 ## homebrew-jekyll
 
-This Homebrew instance provides Jekyll, used to generate the GitHub Pages static sites, like [GNU ARM Eclipse](http://gnuarmeclipse.github.io), [µOS++ IIIe / CMSIS++ / POSIX++](http://micro-os-plus.github.io), [XCDL / xPack](http://xcdl.github.io).
+This Homebrew instance provides Jekyll, used to generate the GitHub Pages static sites, like [GNU ARM Eclipse](http://gnuarmeclipse.github.io), [µOS++ IIIe/CMSIS++/POSIX++](http://micro-os-plus.github.io), [XCDL/xPack](http://xcdl.github.io).
 
 To run the install script:
 
