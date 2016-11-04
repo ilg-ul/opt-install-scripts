@@ -50,25 +50,6 @@ brew link gettext --force
 brew install texinfo
 brew link texinfo --force
 
-if false
-then 
-
-# TeX required to build openOCD & QEMU manuals.
-brew install Caskroom/cask/mactex
-
-# /Library/TeX/texbin
-echo 'rm /etc/paths.d/TeX'
-sudo rm /etc/paths.d/TeX 
-
-# X11 headers required by QEMU (in SDL).
-brew install Caskroom/cask/xquartz
-
-# /opt/X11/bin
-echo '/etc/paths.d/40-XQuartz'
-sudo rm /etc/paths.d/40-XQuartz
-
-fi
-
 # -----------------------------------------------------------------------------
 
 # To use Homebrew, add something like this to ~/.profile
