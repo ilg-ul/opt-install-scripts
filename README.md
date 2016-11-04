@@ -24,7 +24,7 @@ $ git clone https://gist.github.com/ilg-ul/46407a070844f764dec6f27bde385797 \
 
 ## homebrew
 
-This Homebrew instance installs general purpose tools, like minicom.
+This Homebrew instance provides general purpose tools, like minicom.
 
 To run the install script:
 
@@ -40,7 +40,7 @@ $ alias hb='export PATH=$HOME/opt/homebrew/bin:$PATH'
 
 ## homebrew-gae
 
-This Homebrew instance installs tools used during [GNU ARM Eclipse]((http://gnuarmeclipse.github.io)) binary tools builds, like [QEMU](http://gnuarmeclipse.github.io/qemu/), [OpenOCD](http://gnuarmeclipse.github.io/openocd/) and [Windows Build Tools](http://gnuarmeclipse.github.io/windows-build-tools/).
+This Homebrew instance provides tools used during [GNU ARM Eclipse]((http://gnuarmeclipse.github.io)) binary tools builds, like [QEMU](http://gnuarmeclipse.github.io/qemu/), [OpenOCD](http://gnuarmeclipse.github.io/openocd/) and [Windows Build Tools](http://gnuarmeclipse.github.io/windows-build-tools/).
 
 To run the install script:
 
@@ -56,7 +56,7 @@ $ alias hbg='export PATH$HOME/opt/homebrew-gae/bin:$PATH'
 
 ## homebrew-gcc
 
-This Homebrew instance installs GCC 5 and GCC 6, used during µOS++ test builds.
+This Homebrew instance provides GCC 5 and GCC 6, used during µOS++ test builds.
 
 To run the install script:
 
@@ -72,7 +72,7 @@ $ alias hbgcc='export PATH=$HOME/opt/homebrew-gcc/bin:$PATH'
 
 ## homebrew-jekyll
 
-This Homebrew instance installs Jekyll, used to generate the GitHub Pages static sites, like [GNU ARM Eclipse](http://gnuarmeclipse.github.io), [µOS++ IIIe / CMSIS++ / POSIX++](http://micro-os-plus.github.io), [XCDL / xPack](http://xcdl.github.io).
+This Homebrew instance provides Jekyll, used to generate the GitHub Pages static sites, like [GNU ARM Eclipse](http://gnuarmeclipse.github.io), [µOS++ IIIe / CMSIS++ / POSIX++](http://micro-os-plus.github.io), [XCDL / xPack](http://xcdl.github.io).
 
 To run the install script:
 
