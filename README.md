@@ -2,15 +2,15 @@
 
 This is a collection of scripts, used to install optional tools, required during builds.
 
-The strategy is to allow separate updates for separate builds, otherwise updating the tools for a build may affect other builds.
+The strategy is to allow separate updates for separate builds, otherwise updating the tools for one build may affect other builds.
 
-As a consequence, this means to avoid a large install with every tool needed by all builds, and to install separate set of tools, for each build.
+As a consequence, this means to avoid a large install with all tool needed by all builds, and to install separate sets of tools, one for each build.
 
 A small disadvantage of this strategy is a possible duplication of tools, but disk space is not a real limitation.
 
 The build scripts should update the PATH themselves to access the optional tools.
 
-For manual use, for each set of tools can be defined an alias to upadate the PATH.
+For manual use, for each set of tools an alias to upadate the PATH can be defined.
 
 ## Download
 
