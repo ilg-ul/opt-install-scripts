@@ -88,7 +88,7 @@ $ alias hbj='export PATH=$HOME/opt/homebrew-jekyll/bin:$PATH'
 
 ## texlive
 
-This is a local instance of Texlive, used to build the OpenOCD & QEMU manuals.
+This is a local instance of [TeX Live](https://tug.org/texlive/), used to build the OpenOCD & QEMU manuals.
 
 It generally includes the same packages as the MacTex distribution, and is **very large** (> 4.5 GB).
 
@@ -103,3 +103,7 @@ The alias to add these tools to the PATH is `tl`.
 ```
 $ alias tl='export PATH=$HOME/opt/texlive/bin/x86_64-darwin:$PATH'
 ```
+
+Note 1: Homebrew blacklisted TeX, (_"Installing TeX from source is weird and gross"_), but, apart from size and install time, there are no other problems.
+
+Note 2: However, due to its size, it is better to keep TeX separate from the Homebrew instances, which can now be reinstalled more easily. 
