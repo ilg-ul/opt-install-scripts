@@ -20,6 +20,7 @@ IFS=$'\n\t'
 # -----------------------------------------------------------------------------
 
 HB_PREFIX=${HB_PREFIX:-"$HOME/opt/homebrew"}
+export HOMEBREW_NO_EMOJI=1
 
 echo "Recreating \"${HB_PREFIX}\"..."
 rm -rf "${HB_PREFIX}"
@@ -38,7 +39,7 @@ brew update
 
 # -----------------------------------------------------------------------------
 
-brew install minicom gdb
+brew install minicom gdb tree
 
 # -----------------------------------------------------------------------------
 

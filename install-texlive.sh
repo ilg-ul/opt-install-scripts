@@ -62,12 +62,12 @@ tmp_profile=$(mktemp)
 cat <<__EOF__ >> "${tmp_profile}"
 # texlive.profile, copied from MacTex
 TEXDIR ${texlive_prefix}
-TEXMFCONFIG ${texlive_prefix}/texmf-config
-TEXMFHOME ${texlive_prefix}/texmf
+TEXMFCONFIG ~/.texlive/texmf-config
+TEXMFHOME ~/texmf
 TEXMFLOCAL ${texlive_prefix}/texmf-local
 TEXMFSYSCONFIG ${texlive_prefix}/texmf-config
 TEXMFSYSVAR ${texlive_prefix}/texmf-var
-TEXMFVAR ${texlive_prefix}/texmf-var
+TEXMFVAR ~/.texlive/texmf-var
 # binary_universal-darwin 1
 binary_universal-darwin 0
 binary_x86_64-darwin 1

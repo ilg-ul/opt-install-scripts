@@ -29,7 +29,7 @@ This Homebrew instance provides general purpose tools, like minicom.
 To run the install script:
 
 ```
-$ bash $HOME/opt/install-opt.gist/install-homebrew.sh
+$ caffeinate bash $HOME/opt/install-opt.gist/install-homebrew.sh
 ```
 
 The alias to add these tools to the PATH is `hb`.
@@ -45,7 +45,7 @@ This Homebrew instance provides tools used during [GNU ARM Eclipse]((http://gnua
 To run the install script:
 
 ```
-$ bash $HOME/opt/install-opt.gist/install-homebrew-gae.sh
+$ caffeinate bash $HOME/opt/install-opt.gist/install-homebrew-gae.sh
 ```
 
 The alias to add these tools to the PATH is `hbg`.
@@ -61,7 +61,7 @@ This Homebrew instance provides GCC 5 and GCC 6, used during µOS++ test builds.
 To run the install script:
 
 ```
-$ bash $HOME/opt/install-opt.gist/install-homebrew-gcc.sh
+$ caffeinate bash $HOME/opt/install-opt.gist/install-homebrew-gcc.sh
 ```
 
 The alias to add these tools to the PATH is `hbgcc`.
@@ -77,7 +77,7 @@ This Homebrew instance provides Jekyll, used to generate the GitHub Pages static
 To run the install script:
 
 ```
-$ bash $HOME/opt/install-opt.gist/install-homebrew-jekyll.sh
+$ caffeinate bash $HOME/opt/install-opt.gist/install-homebrew-jekyll.sh
 ```
 
 The alias to add these tools to the PATH is `hbj`.
@@ -95,7 +95,7 @@ It generally includes the same packages as the MacTex distribution, and is **ver
 To run the install script:
 
 ```
-$ bash $HOME/opt/install-opt.gist/install-texlive.sh
+$ caffeinate bash $HOME/opt/install-opt.gist/install-texlive.sh
 ```
 
 The alias to add these tools to the PATH is `tl`.
