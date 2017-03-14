@@ -32,7 +32,7 @@ echo "Recreating \"${HB_PREFIX}\"..."
 rm -rf "${HB_PREFIX}"
 mkdir -p "${HB_PREFIX}"
 
-PATH=${HB_PREFIX}/bin:$PATH
+PATH=${HB_PREFIX}/bin:${PATH}
 
 # -----------------------------------------------------------------------------
 
@@ -59,7 +59,10 @@ brew link gettext --force
 brew install texinfo
 brew link texinfo --force
 
+# libtool required to build openOCD (bootstrap) 
+brew install libtool
+
 # -----------------------------------------------------------------------------
 
 # To use Homebrew, add something like this to ~/.profile
-echo alias hbg=\'export PATH=${HB_PREFIX}/bin:\$PATH\'
+echo alias agae=\'export PATH=${HB_PREFIX}/bin:\${PATH}\'

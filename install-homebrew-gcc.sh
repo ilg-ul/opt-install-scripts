@@ -32,7 +32,7 @@ echo "Recreating \"${HB_PREFIX}\"..."
 rm -rf "${HB_PREFIX}"
 mkdir -p "${HB_PREFIX}"
 
-PATH=${HB_PREFIX}/bin:$PATH
+PATH=${HB_PREFIX}/bin:${PATH}
 
 # -----------------------------------------------------------------------------
 
@@ -45,14 +45,17 @@ echo "Updating homebrew..."
 rm -rf "${HB_PREFIX}/share/doc/homebrew"
 brew update
 
-brew tap homebrew/versions
+# brew tap homebrew/versions
 
 # -----------------------------------------------------------------------------
 
-brew install gcc5
-brew install gcc6
+brew install gcc@5
+brew install gcc@6
+
+# Now available from core.
+brew instal llvm@3.8
 
 # -----------------------------------------------------------------------------
 
 # To use Homebrew, add something like this to ~/.profile
-echo alias hbgcc=\'export PATH=${HB_PREFIX}/bin:\$PATH\'
+echo alias agcc=\'export PATH=${HB_PREFIX}/bin:\${PATH}\'

@@ -25,7 +25,7 @@ xcodebuild -version
 
 # -----------------------------------------------------------------------------
 
-HB_PREFIX=${HB_PREFIX:-"$HOME/opt/homebrew-jekyll"}
+HB_PREFIX=${HB_PREFIX:-"$HOME/opt/homebrew-nx"}
 export HOMEBREW_NO_EMOJI=1
 
 echo "Recreating \"${HB_PREFIX}\"..."
@@ -47,15 +47,10 @@ brew update
 
 # -----------------------------------------------------------------------------
 
-brew install ruby
-ruby --version
-gem install jekyll --verbose
-jekyll --version
-
-gem install bundler --verbose
-bundler --version
+brew tap px4/px4
+brew install kconfig-frontends
 
 # -----------------------------------------------------------------------------
 
 # To use Homebrew, add something like this to ~/.profile
-echo alias ajkl=\'export PATH=${HB_PREFIX}/bin:\${PATH}\'
+echo alias ahbnx=\'export PATH=${HB_PREFIX}/bin:\${PATH}\'

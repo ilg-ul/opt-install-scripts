@@ -19,34 +19,30 @@ IFS=$'\n\t'
 
 # -----------------------------------------------------------------------------
 
-HB_PREFIX=${HB_PREFIX:-"$HOME/opt/homebrew-gcc5clt"}
+HB_PREFIX=${HB_PREFIX:-"$HOME/opt/homebrew-maven"}
 export HOMEBREW_NO_EMOJI=1
 
 echo "Recreating \"${HB_PREFIX}\"..."
 rm -rf "${HB_PREFIX}"
 mkdir -p "${HB_PREFIX}"
 
-PATH=${HB_PREFIX}/bin:$PATH
-
-# -----------------------------------------------------------------------------
+PATH=${HB_PREFIX}/bin:${PATH}
 
 bash -c "(curl -L https://github.com/Homebrew/homebrew/tarball/master | \
   tar -x -v --strip 1 -C "${HB_PREFIX}" -f -)"
-
+  
 brew --version
 
 echo "Updating homebrew..."
 rm -rf "${HB_PREFIX}/share/doc/homebrew"
 brew update
 
-brew tap homebrew/versions
-
 # -----------------------------------------------------------------------------
 
-brew install gcc5
-# brew install gcc6
+brew install tree
+brew install maven
 
 # -----------------------------------------------------------------------------
 
 # To use Homebrew, add something like this to ~/.profile
-echo alias hbgcc=\'export PATH=${HB_PREFIX}/bin:\$PATH\'
+echo alias amaven=\'export PATH=${HB_PREFIX}/bin:\${PATH}\'

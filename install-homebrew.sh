@@ -26,7 +26,7 @@ echo "Recreating \"${HB_PREFIX}\"..."
 rm -rf "${HB_PREFIX}"
 mkdir -p "${HB_PREFIX}"
 
-PATH=${HB_PREFIX}/bin:$PATH
+PATH=${HB_PREFIX}/bin:${PATH}
 
 bash -c "(curl -L https://github.com/Homebrew/homebrew/tarball/master | \
   tar -x -v --strip 1 -C "${HB_PREFIX}" -f -)"
@@ -41,7 +41,10 @@ brew update
 
 brew install minicom gdb tree
 
+# May be used by mBed
+brew install hg
+
 # -----------------------------------------------------------------------------
 
 # To use Homebrew, add something like this to ~/.profile
-echo alias hb=\'export PATH=${HB_PREFIX}/bin:\$PATH\'
+echo alias ahb=\'export PATH=${HB_PREFIX}/bin:\${PATH}\'

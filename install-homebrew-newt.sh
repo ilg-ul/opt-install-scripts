@@ -19,13 +19,7 @@ IFS=$'\n\t'
 
 # -----------------------------------------------------------------------------
 
-echo
-echo "Checking if Xcode Command Line Tools are installed..."
-xcodebuild -version
-
-# -----------------------------------------------------------------------------
-
-HB_PREFIX=${HB_PREFIX:-"$HOME/opt/homebrew-jekyll"}
+HB_PREFIX=${HB_PREFIX:-"$HOME/opt/homebrew-newt"}
 export HOMEBREW_NO_EMOJI=1
 
 echo "Recreating \"${HB_PREFIX}\"..."
@@ -38,24 +32,23 @@ PATH=${HB_PREFIX}/bin:${PATH}
 
 bash -c "(curl -L https://github.com/Homebrew/homebrew/tarball/master | \
   tar -x -v --strip 1 -C "${HB_PREFIX}" -f -)"
-  
+
 brew --version
 
 echo "Updating homebrew..."
 rm -rf "${HB_PREFIX}/share/doc/homebrew"
 brew update
 
+brew tap homebrew/versions
+
 # -----------------------------------------------------------------------------
 
-brew install ruby
-ruby --version
-gem install jekyll --verbose
-jekyll --version
-
-gem install bundler --verbose
-bundler --version
+brew install gcc5 gdb
+brew install go
+brew install tree
 
 # -----------------------------------------------------------------------------
 
 # To use Homebrew, add something like this to ~/.profile
-echo alias ajkl=\'export PATH=${HB_PREFIX}/bin:\${PATH}\'
+echo alias anewt=\'export PATH=${HB_PREFIX}/bin:\${PATH}\; export GOPATH=\$HOME/dev/go\\'
+
