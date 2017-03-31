@@ -1,4 +1,4 @@
-# install-opt
+# opt-install-scripts
 
 This is a collection of scripts, used to install optional tools, required during builds.
 
@@ -16,10 +16,10 @@ For manual use, for each set of tools an alias to upadate the PATH can be define
 
 These scripts can be downloaded from GitHub [ilg-ul/opt-install-scripts](https://github.com/ilg-ul/opt-install-scripts).
 
-```
-$ mkdir -p ${HOME}/opt
+```bash
+$ mkdir -p "${HOME}/opt"
 $ git clone https://github.com/ilg-ul/opt-install-scripts \
-    ${HOME}/opt/install-scripts.git
+    "${HOME}/opt/install-scripts.git"
 ```
 
 ## homebrew
@@ -28,13 +28,13 @@ This Homebrew instance provides general purpose tools, like minicom.
 
 To run the install script:
 
-```
-$ caffeinate bash ${HOME}/opt/install-scripts.git/install-homebrew.sh
+```bash
+$ caffeinate bash "${HOME}/opt/install-scripts.git/install-homebrew.sh"
 ```
 
 The alias to add these tools to the PATH is `hb`.
 
-```
+```bash
 $ alias ahb='export PATH=${HOME}/opt/homebrew/bin:${PATH}'
 ```
 
@@ -44,14 +44,14 @@ This Homebrew instance provides tools used during [GNU ARM Eclipse]((http://gnua
 
 To run the install script:
 
-```
+```bash
 $ caffeinate bash 
-$ bash ${HOME}/opt/install-scripts.git/install-homebrew-gae.sh
+$ bash "${HOME}/opt/install-scripts.git/install-homebrew-gae.sh"
 ```
 
 The alias to add these tools to the PATH is `hbg`.
 
-```
+```bash
 $ alias agae='export PATH${HOME}/opt/homebrew-gae/bin:${PATH}'
 ```
 
@@ -61,14 +61,14 @@ This Homebrew instance provides GCC 5 and GCC 6, used during µOS++ test builds.
 
 To run the install script:
 
-```
+```bash
 $ caffeinate bash 
-$ bash ${HOME}/opt/install-scripts.git/install-homebrew-gcc.sh
+$ bash "${HOME}/opt/install-scripts.git/install-homebrew-gcc.sh"
 ```
 
 The alias to add these tools to the PATH is `hbgcc`.
 
-```
+```bash
 $ alias agcc='export PATH=${HOME}/opt/homebrew-gcc/bin:${PATH}'
 ```
 
@@ -78,14 +78,14 @@ This Homebrew instance provides Jekyll, used to generate the GitHub Pages static
 
 To run the install script:
 
-```
+```bash
 $ caffeinate bash 
-$ bash ${HOME}/opt/install-scripts.git/install-homebrew-jekyll.sh
+$ bash "${HOME}/opt/install-scripts.git/install-homebrew-jekyll.sh"
 ```
 
 The alias to add these tools to the PATH is `hbj`.
 
-```
+```bash
 $ alias ajkl='export PATH=${HOME}/opt/homebrew-jekyll/bin:${PATH}'
 ```
 
@@ -95,14 +95,14 @@ This Homebrew instance provides Apache `newt`, used to experiment with [mynewt](
 
 To run the install script:
 
-```
+```bash
 $ caffeinate bash 
-$ bash ${HOME}/opt/install-scripts.git/install-homebrew-newt.sh
+$ bash "${HOME}/opt/install-scripts.git/install-homebrew-newt.sh"
 ```
 
 The alias to add these tools to the PATH is `newt`.
 
-```
+```bash
 $ alias anewt='; export GOPATH=${HOME}/dev/go; export PATH=${HOME}/opt/homebrew-jekyll/bin:GOPATH/bin:${PATH}'
 ```
 
@@ -114,14 +114,14 @@ It generally includes the same packages as the MacTex distribution, and is **ver
 
 To run the install script:
 
-```
+```bash
 $ caffeinate bash 
-$ bash ${HOME}/opt/install-scripts.git/install-texlive.sh
+$ bash "${HOME}/opt/install-scripts.git/install-texlive.sh"
 ```
 
 The alias to add these tools to the PATH is `tl`.
 
-```
+```bash
 $ alias atl='export PATH=${HOME}/opt/texlive/bin/x86_64-darwin:${PATH}'
 ```
 
