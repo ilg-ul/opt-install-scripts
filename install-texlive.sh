@@ -144,7 +144,7 @@ __EOF__
 # https://www.tug.org/texlive/doc/install-tl.html
 
 # Prevent power saving mode.
-time caffeinate "${tl_archive_path}/install-tl" \
+time caffeinate "${tl_folder}/install-tl" \
 -no-gui -lang en \
 -profile "${tmp_profile}" 
 
