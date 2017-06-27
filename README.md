@@ -38,7 +38,24 @@ The alias to add these tools to the PATH is `hb`.
 $ alias ahb='export PATH=${HOME}/opt/homebrew/bin:${PATH}'
 ```
 
-## homebrew-gae
+## homebrew-gme
+
+This Homebrew instance provides tools used during [GNU MCU Eclipse]((http://gnuarmeclipse.github.io)) binary tools builds, like [QEMU](http://gnuarmeclipse.github.io/qemu/), [OpenOCD](http://gnuarmeclipse.github.io/openocd/) and [Windows Build Tools](http://gnuarmeclipse.github.io/windows-build-tools/).
+
+To run the install script:
+
+```
+$ caffeinate bash 
+$ bash ${HOME}/opt/install-scripts.git/install-homebrew-gme.sh
+```
+
+The alias to add these tools to the PATH is `agme`.
+
+```
+$ alias agme='export PATH${HOME}/opt/homebrew-gae/bin:${PATH}'
+```
+
+## homebrew-gae (DEPRECATED)
 
 This Homebrew instance provides tools used during [GNU ARM Eclipse]((http://gnuarmeclipse.github.io)) binary tools builds, like [QEMU](http://gnuarmeclipse.github.io/qemu/), [OpenOCD](http://gnuarmeclipse.github.io/openocd/) and [Windows Build Tools](http://gnuarmeclipse.github.io/windows-build-tools/).
 
@@ -49,7 +66,7 @@ $ caffeinate bash
 $ bash ${HOME}/opt/install-scripts.git/install-homebrew-gae.sh
 ```
 
-The alias to add these tools to the PATH is `hbg`.
+The alias to add these tools to the PATH is `agae`.
 
 ```
 $ alias agae='export PATH${HOME}/opt/homebrew-gae/bin:${PATH}'
