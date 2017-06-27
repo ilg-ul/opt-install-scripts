@@ -49,11 +49,14 @@ brew update
 
 # -----------------------------------------------------------------------------
 
+brew install gcc@4.8
+# brew install gcc@4.9
+
 brew install gcc@5
 brew install gcc@6
 
-# Now available from core.
-brew instal llvm@3.8
+# Now available from core: llvm@3.8, llvm@3.9, but do not work as expected.
+# brew instal llvm@3.8
 
 # -----------------------------------------------------------------------------
 
