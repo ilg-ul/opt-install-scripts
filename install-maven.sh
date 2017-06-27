@@ -19,7 +19,9 @@ IFS=$'\n\t'
 
 # -----------------------------------------------------------------------------
 
-mvn_version="3.3.9"
+# https://maven.apache.org/download.cgi?Preferred=http%3A%2F%2Fmirror.evowise.com%2Fapache%2F#
+
+mvn_version="3.5.0"
 mvn_major="$(echo ${mvn_version} | sed -e 's/\([0-9]*\)\..*/\1/')"
 mvn_folder="apache-maven-${mvn_version}"
 mvn_archive="${mvn_folder}-bin.tar.gz"
@@ -39,4 +41,4 @@ tar -x -z -f "${mvn_download}/${mvn_archive}" -C "${mvn_install}"
 echo
 echo "Done."
 
-echo alias amvn=\'export PATH=${mvn_install}/${mvn_folder}/bin:\${PATH}\'
+echo alias amaven=\'export PATH=${HOME}/opt/${mvn_folder}/bin:\${PATH}\'
