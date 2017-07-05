@@ -20,10 +20,12 @@ IFS=$'\n\t'
 # -----------------------------------------------------------------------------
 # This script installs a local instance of TeX Live (https://tug.org/texlive/).
 
-tl_url=http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 tl_archive_name="install-tl-unx.tar.gz"
 tl_archive_path="$HOME/Downloads/${tl_archive_name}"
 tl_folder="/tmp/install-tl"
+# tl_url=http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+tl_repo_url=ftp://tug.org/historic/systems/texlive//2016/tlnet-final
+tl_archive_url=ftp://tug.org/historic/systems/texlive//2016/${tl_archive_name}
 
 # The install destination folder.
 texlive_prefix="${HOME}/opt/texlive"
@@ -33,13 +35,17 @@ texlive_prefix="${HOME}/opt/texlive"
 # Download the install tools.
 if [ ! -f "${tl_archive_path}" ]
 then
-  curl -L "${tl_url}" -o "${tl_archive_path}"
+  echo
+  echo "Downloading '${tl_archive_url}'..."
+  curl -L "${tl_archive_url}" -o "${tl_archive_path}"
 fi
 
 rm -rf "${tl_folder}"
 mkdir -p "${tl_folder}"
 
 # Unpack the install tools.
+echo
+echo "Unpacking '${tl_archive_path}'..."
 tar x -v -C "${tl_folder}" --strip-components 1 -f "${tl_archive_path}"
 
 # -----------------------------------------------------------------------------
@@ -47,7 +53,7 @@ tar x -v -C "${tl_folder}" --strip-components 1 -f "${tl_archive_path}"
 if [ -d "${texlive_prefix}" ]
 then
   rm -rf "${texlive_prefix}.bak"
-  # Backup previous install.
+  echo "Backing-up previous install..."
   mv "${texlive_prefix}" "${texlive_prefix}.bak"
 fi
 
@@ -56,6 +62,7 @@ mkdir -p "${texlive_prefix}"
 # -----------------------------------------------------------------------------
 
 # Create the texlive.profile used to automate the install.
+# These definitions are specific to TeX Live 2016.
 tmp_profile=$(mktemp)
 
 # Note: __EOF__ is not quoted to allow local substitutions.
@@ -144,13 +151,16 @@ __EOF__
 # https://www.tug.org/texlive/doc/install-tl.html
 
 # Prevent power saving mode.
-time caffeinate "${tl_folder}/install-tl" \
+echo
+echo "Running install-tl..."
+time "${tl_folder}/install-tl" \
+-repository ${tl_repo_url} \
 -no-gui -lang en \
 -profile "${tmp_profile}" 
 
 # -----------------------------------------------------------------------------
 
-rm "${tmp_profile}"
+# rm "${tmp_profile}"
 
 echo
 echo "Done."

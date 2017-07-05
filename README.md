@@ -55,6 +55,10 @@ The alias to add these tools to the PATH is `agme`.
 $ alias agme='export PATH${HOME}/opt/homebrew-gae/bin:${PATH}'
 ```
 
+This formula is keg-only, which means it was not symlinked into /Users/ilg/opt/homebrew-gme,
+because macOS provides the BSD gettext library & some software gets confused if both are in the library path.
+
+
 ## homebrew-gae (DEPRECATED)
 
 This Homebrew instance provides tools used during [GNU ARM Eclipse]((http://gnuarmeclipse.github.io)) binary tools builds, like [QEMU](http://gnuarmeclipse.github.io/qemu/), [OpenOCD](http://gnuarmeclipse.github.io/openocd/) and [Windows Build Tools](http://gnuarmeclipse.github.io/windows-build-tools/).
@@ -133,7 +137,7 @@ To run the install script:
 
 ```bash
 $ caffeinate bash 
-$ bash "${HOME}/opt/install-scripts.git/install-texlive.sh"
+$ exec bash "${HOME}/opt/install-scripts.git/install-texlive.sh"
 ```
 
 The alias to add these tools to the PATH is `tl`.
@@ -145,3 +149,5 @@ $ alias atl='export PATH=${HOME}/opt/texlive/bin/x86_64-darwin:${PATH}'
 Note 1: Homebrew blacklisted TeX, (_"Installing TeX from source is weird and gross"_), but, apart from size and install time, there are no other problems.
 
 Note 2: However, due to its size, it is better to keep TeX separate from the Homebrew instances, which can now be reinstalled more easily. 
+
+Note 3: The current script installs TeX Live 2016.
