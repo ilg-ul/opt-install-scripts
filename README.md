@@ -29,13 +29,14 @@ This Homebrew instance provides general purpose tools, like minicom.
 To run the install script:
 
 ```bash
-$ caffeinate bash "${HOME}/opt/install-scripts.git/install-homebrew.sh"
+$ caffeinate bash 
+$ exec bash "${HOME}/opt/install-scripts.git/install-homebrew.sh"
 ```
 
 The alias to add these tools to the PATH is `hb`.
 
 ```bash
-$ alias ahb='export PATH=${HOME}/opt/homebrew/bin:${PATH}'
+$ alias ahb='export PATH=${HOME}/opt/homebrew/hb/bin:${PATH}'
 ```
 
 ## homebrew-gme
@@ -46,20 +47,20 @@ To run the install script:
 
 ```
 $ caffeinate bash 
-$ bash ${HOME}/opt/install-scripts.git/install-homebrew-gme.sh
+$ exec bash ${HOME}/opt/install-scripts.git/install-homebrew-gme.sh
 ```
 
 The alias to add these tools to the PATH is `agme`.
 
 ```
-$ alias agme='export PATH${HOME}/opt/homebrew-gae/bin:${PATH}'
+$ alias agme='export PATH=${HOME}/opt/homebrew/gae/bin:${PATH}'
 ```
 
-This formula is keg-only, which means it was not symlinked into /Users/ilg/opt/homebrew-gme,
+This formula is keg-only, which means it was not symlinked into /Users/ilg/opt/homebrew/gme,
 because macOS provides the BSD gettext library & some software gets confused if both are in the library path.
 
 
-## homebrew-gae (DEPRECATED)
+## homebrew/gae (DEPRECATED)
 
 This Homebrew instance provides tools used during [GNU ARM Eclipse]((http://gnuarmeclipse.github.io)) binary tools builds, like [QEMU](http://gnuarmeclipse.github.io/qemu/), [OpenOCD](http://gnuarmeclipse.github.io/openocd/) and [Windows Build Tools](http://gnuarmeclipse.github.io/windows-build-tools/).
 
@@ -67,16 +68,16 @@ To run the install script:
 
 ```bash
 $ caffeinate bash 
-$ bash "${HOME}/opt/install-scripts.git/install-homebrew-gae.sh"
+$ exec bash "${HOME}/opt/install-scripts.git/install-homebrew-gae.sh"
 ```
 
 The alias to add these tools to the PATH is `agae`.
 
 ```bash
-$ alias agae='export PATH${HOME}/opt/homebrew-gae/bin:${PATH}'
+$ alias agae='export PATH=${HOME}/opt/homebrew/gae/bin:${PATH}'
 ```
 
-## homebrew-gcc
+## homebrew/gcc
 
 This Homebrew instance provides GCC 5 and GCC 6, used during µOS++ test builds.
 
@@ -84,16 +85,16 @@ To run the install script:
 
 ```bash
 $ caffeinate bash 
-$ bash "${HOME}/opt/install-scripts.git/install-homebrew-gcc.sh"
+$ exec bash "${HOME}/opt/install-scripts.git/install-homebrew-gcc.sh"
 ```
 
 The alias to add these tools to the PATH is `hbgcc`.
 
 ```bash
-$ alias agcc='export PATH=${HOME}/opt/homebrew-gcc/bin:${PATH}'
+$ alias agcc='export PATH=${HOME}/opt/homebrew/gcc/bin:${PATH}'
 ```
 
-## homebrew-jekyll
+## homebrew/jekyll
 
 This Homebrew instance provides Jekyll, used to generate the GitHub Pages static sites, like [GNU ARM Eclipse](http://gnuarmeclipse.github.io), [µOS++ IIIe/CMSIS++/POSIX++](http://micro-os-plus.github.io), [XCDL/xPack](http://xcdl.github.io).
 
@@ -101,13 +102,13 @@ To run the install script:
 
 ```bash
 $ caffeinate bash 
-$ bash "${HOME}/opt/install-scripts.git/install-homebrew-jekyll.sh"
+$ exec bash "${HOME}/opt/install-scripts.git/install-homebrew-jekyll.sh"
 ```
 
 The alias to add these tools to the PATH is `hbj`.
 
 ```bash
-$ alias ajkl='export PATH=${HOME}/opt/homebrew-jekyll/bin:${PATH}'
+$ alias ajkl='export PATH=${HOME}/opt/homebrew/jekyll/bin:${PATH}'
 ```
 
 ## homebrew-newt
@@ -118,13 +119,13 @@ To run the install script:
 
 ```bash
 $ caffeinate bash 
-$ bash "${HOME}/opt/install-scripts.git/install-homebrew-newt.sh"
+$ exec bash "${HOME}/opt/install-scripts.git/install-homebrew-newt.sh"
 ```
 
 The alias to add these tools to the PATH is `newt`.
 
 ```bash
-$ alias anewt='; export GOPATH=${HOME}/dev/go; export PATH=${HOME}/opt/homebrew-jekyll/bin:GOPATH/bin:${PATH}'
+$ alias anewt='; export GOPATH=${HOME}/dev/go; export PATH=${HOME}/opt/homebrew/jekyll/bin:GOPATH/bin:${PATH}'
 ```
 
 ## texlive

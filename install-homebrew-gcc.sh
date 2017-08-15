@@ -21,11 +21,11 @@ IFS=$'\n\t'
 
 echo
 echo "Checking if Xcode Command Line Tools are installed..."
-xcodebuild -version
+xcode-select -p
 
 # -----------------------------------------------------------------------------
 
-HB_PREFIX=${HB_PREFIX:-"$HOME/opt/homebrew-gcc"}
+HB_PREFIX=${HB_PREFIX:-"$HOME/opt/homebrew/gcc"}
 export HOMEBREW_NO_EMOJI=1
 
 echo "Recreating \"${HB_PREFIX}\"..."

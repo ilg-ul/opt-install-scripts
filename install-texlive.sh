@@ -18,6 +18,12 @@ set -o nounset # Exit if variable not set.
 IFS=$'\n\t'
 
 # -----------------------------------------------------------------------------
+
+echo
+echo "Checking if Xcode Command Line Tools are installed..."
+xcode-select -p
+
+# -----------------------------------------------------------------------------
 # This script installs a local instance of TeX Live (https://tug.org/texlive/).
 
 tl_archive_name="install-tl-unx.tar.gz"

@@ -19,6 +19,12 @@ IFS=$'\n\t'
 
 # -----------------------------------------------------------------------------
 
+echo
+echo "Checking if Xcode Command Line Tools are installed..."
+xcode-select -p
+
+# -----------------------------------------------------------------------------
+
 # https://maven.apache.org/download.cgi?Preferred=http%3A%2F%2Fmirror.evowise.com%2Fapache%2F#
 
 mvn_version="3.5.0"
