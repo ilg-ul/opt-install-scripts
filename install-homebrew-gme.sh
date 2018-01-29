@@ -67,5 +67,21 @@ brew install gawk gnu-sed
 
 # -----------------------------------------------------------------------------
 
+cat <<'__EOF__' > "${HB_PREFIX}"/bin/pkg-config-verbose
+#! /bin/sh
+# pkg-config wrapper for debug
+
+pkg-config $@
+RET=$?
+OUT=$(pkg-config $@)
+echo "($PKG_CONFIG_PATH) | pkg-config $@ -> $RET [$OUT]" >&2
+exit ${RET}
+
+__EOF__
+
+chmod +x "${HB_PREFIX}"/bin/pkg-config-verbose
+
+# -----------------------------------------------------------------------------
+
 # To use Homebrew, add something like this to ~/.profile
 echo alias agme=\'export PATH=${HB_PREFIX}/bin:\${PATH}\'
