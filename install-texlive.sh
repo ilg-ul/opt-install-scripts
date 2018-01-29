@@ -19,9 +19,9 @@ IFS=$'\n\t'
 
 # -----------------------------------------------------------------------------
 
-echo
-echo "Checking if Xcode Command Line Tools are installed..."
-xcode-select -p
+# echo
+# echo "Checking if Xcode Command Line Tools are installed..."
+# xcode-select -print-path
 
 # -----------------------------------------------------------------------------
 # This script installs a local instance of TeX Live (https://tug.org/texlive/).
