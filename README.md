@@ -53,7 +53,7 @@ $ exec bash ${HOME}/opt/install-scripts.git/install-homebrew-gme.sh
 The alias to add these tools to the PATH is `agme`.
 
 ```
-$ alias agme='export PATH=${HOME}/opt/homebrew/gae/bin:${PATH}'
+$ alias agme='export PATH=${HOME}/opt/homebrew/gme/bin:${PATH}'
 ```
 
 This formula is keg-only, which means it was not symlinked into /Users/ilg/opt/homebrew/gme,
@@ -147,8 +147,12 @@ The alias to add these tools to the PATH is `tl`.
 $ alias atl='export PATH=${HOME}/opt/texlive/bin/x86_64-darwin:${PATH}'
 ```
 
-Note 1: Homebrew blacklisted TeX, (_"Installing TeX from source is weird and gross"_), but, apart from size and install time, there are no other problems.
+Notes:
 
-Note 2: However, due to its size, it is better to keep TeX separate from the Homebrew instances, which can now be reinstalled more easily. 
+- homebrew blacklisted TeX, (_"Installing TeX from source is weird and gross"_), but, apart from size and install time, there are no other problems.
+- however, due to its size, it is better to keep TeX separate from the Homebrew instances, which can now be reinstalled more easily. 
+- the current script installs TeX Live 2016.
+- the GCC manuals fail with `-scheme basic` (! I can't find file `texinfo.tex'.)
+- the OpenOCD manual passes with `-scheme basic`
 
-Note 3: The current script installs TeX Live 2016.
+
