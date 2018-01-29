@@ -75,7 +75,7 @@ mkdir -p "${texlive_prefix}"
 
 # Create the texlive.profile used to automate the install.
 # These definitions are specific to TeX Live 2016.
-tmp_profile=$(mktemp)
+tmp_profile=$(mktemp /tmp/texlive.XXXXXX)
 
 # Note: __EOF__ is not quoted to allow local substitutions.
 cat <<__EOF__ >> "${tmp_profile}"
