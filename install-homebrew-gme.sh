@@ -74,7 +74,7 @@ cat <<'__EOF__' > "${HB_PREFIX}"/bin/pkg-config-verbose
 pkg-config $@
 RET=$?
 OUT=$(pkg-config $@)
-echo "($PKG_CONFIG_PATH) | pkg-config $@ -> $RET [$OUT]" >&2
+echo "($PKG_CONFIG_PATH) | pkg-config $@ -> $RET [$OUT]" 1>&2
 exit ${RET}
 
 __EOF__
