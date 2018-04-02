@@ -49,14 +49,27 @@ brew update
 
 # -----------------------------------------------------------------------------
 
-brew install gcc@4.8
+# brew install gcc@4.8
 # brew install gcc@4.9
 
-brew install gcc@5
+# GCC 5 no longer builds.
+# brew install gcc@5
 brew install gcc@6
+brew install gcc@7
 
 # Now available from core: llvm@3.8, llvm@3.9, but do not work as expected.
 # brew instal llvm@3.8
+
+# GDB 8.1 fails, use 8.0
+# https://stackoverflow.com/questions/49001329/gdb-doesnt-work-on-macos-high-sierra-10-13-3
+
+# brew install gdb
+brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/9ec9fb27a33698fc7636afce5c1c16787e9ce3f3/Formula/gdb.rb
+brew pin gdb
+
+# https://sourceware.org/gdb/wiki/BuildingOnDarwin
+echo "codesign -s gdb-cert $(which gdb)"
+echo "cat set startup-with-shell off >>.gdbinit"
 
 # -----------------------------------------------------------------------------
 
