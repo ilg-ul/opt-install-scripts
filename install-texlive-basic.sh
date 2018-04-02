@@ -19,9 +19,9 @@ IFS=$'\n\t'
 
 # -----------------------------------------------------------------------------
 
-# echo
-# echo "Checking if Xcode Command Line Tools are installed..."
-# xcode-select -print-path
+echo
+echo "Checking if Xcode Command Line Tools are installed..."
+xcode-select -p
 
 # -----------------------------------------------------------------------------
 # This script installs a local instance of TeX Live (https://tug.org/texlive/).
@@ -35,15 +35,13 @@ tl_folder="/tmp/install-tl"
 # tl_repo_url="${tl_url}"/systems/texlive/tlnet
 # tl_archive_url="${tl_url}"/systems/texlive/tlnet/${tl_archive_name}
 
-# The main URL has a connection limit of 10, it is not usable.
 # tl_url="ftp://tug.org/historic"
 tl_url="ftp://ftp.math.utah.edu/pub/tex/historic"
-
 tl_repo_url="${tl_url}"/systems/texlive/${tl_edition}/tlnet-final
 tl_archive_url="${tl_url}"/systems/texlive/${tl_edition}/${tl_archive_name}
 
 # The install destination folder.
-texlive_prefix="${HOME}/opt/texlive"
+texlive_prefix="${HOME}/opt/texlive-basic"
 
 # -----------------------------------------------------------------------------
 
@@ -75,7 +73,7 @@ mkdir -p "${texlive_prefix}"
 
 # Create the texlive.profile used to automate the install.
 # These definitions are specific to TeX Live 2016.
-tmp_profile=$(mktemp /tmp/texlive.XXXXXX)
+tmp_profile=$(mktemp)
 
 # Note: __EOF__ is not quoted to allow local substitutions.
 cat <<__EOF__ >> "${tmp_profile}"
@@ -108,7 +106,7 @@ time "${tl_folder}/install-tl" \
 -profile "${tmp_profile}" \
 -scheme medium
 
-# tlmgr install collection-fontsrecommended
+tlmgr install collection-fontsrecommended
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
