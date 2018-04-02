@@ -45,9 +45,12 @@ brew update
 
 # -----------------------------------------------------------------------------
 
-brew install minicom gdb tree
+# For general usage.
+brew install minicom tree
 
-# May be used by mBed
+# GDB is available from the GCC instance.
+
+# May be used by mBed.
 brew install hg
 
 # -----------------------------------------------------------------------------
