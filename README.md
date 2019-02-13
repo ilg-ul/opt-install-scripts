@@ -98,6 +98,10 @@ Notes:
 - the GCC manuals fail with `-scheme basic` (! I can't find file `texinfo.tex'.)
 - the OpenOCD manual passes with `-scheme basic`
 
+## homebrew/xbb
+
+It was moved to [xpack/xpack-build-box.git](https://github.com/xpack/xpack-build-box).
+
 ---
 
 ## homebrew-newt (DEPRECATED)
