@@ -53,6 +53,8 @@ brew install minicom tree
 # May be used by mBed.
 brew install hg
 
+brew install cvs
+
 # -----------------------------------------------------------------------------
 
 # To use Homebrew, add something like this to ~/.profile
