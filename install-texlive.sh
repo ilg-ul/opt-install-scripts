@@ -37,11 +37,11 @@ tl_folder="/tmp/install-tl"
 
 # tl_url="ftp://tug.org/historic"
 tl_url="ftp://ftp.math.utah.edu/pub/tex/historic"
-tl_repo_url="${tl_url}"/systems/texlive/${tl_edition}/tlnet-final
-tl_archive_url="${tl_url}"/systems/texlive/${tl_edition}/${tl_archive_name}
+tl_repo_url="${tl_url}/systems/texlive/${tl_edition}/tlnet-final"
+tl_archive_url="${tl_url}/systems/texlive/${tl_edition}/${tl_archive_name}"
 
 # The install destination folder.
-texlive_prefix="${HOME}/opt/texlive-basic"
+texlive_prefix="${HOME}/opt/texlive"
 
 # -----------------------------------------------------------------------------
 
@@ -74,6 +74,8 @@ mkdir -p "${texlive_prefix}"
 # Create the texlive.profile used to automate the install.
 # These definitions are specific to TeX Live 2016.
 tmp_profile=$(mktemp)
+echo
+echo "Profile file '${tmp_profile}'"
 
 # Note: __EOF__ is not quoted to allow local substitutions.
 cat <<__EOF__ >> "${tmp_profile}"
@@ -94,13 +96,13 @@ __EOF__
 
 # https://www.tug.org/texlive/doc/install-tl.html
 
-export PATH="${texlive_prefix}"/bin/x86_64-darwin:${PATH}
+export PATH="${texlive_prefix}/bin/x86_64-darwin:${PATH}"
 
 # Schmes: basic (~80 packs), medium (~1000 packs), full (~3400)
 echo
 echo "Running install-tl..."
 time "${tl_folder}/install-tl" \
--repository ${tl_repo_url} \
+-repository "${tl_repo_url}" \
 -no-gui \
 -lang en \
 -profile "${tmp_profile}" \
@@ -113,7 +115,7 @@ tlmgr option -- autobackup 0
 
 # -----------------------------------------------------------------------------
 
-# rm "${tmp_profile}"
+rm "${tmp_profile}"
 
 echo
 echo "Done."
