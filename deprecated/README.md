@@ -7,7 +7,7 @@ To run the install script:
 
 ```bash
 $ caffeinate bash 
-$ exec bash "${HOME}/opt/install-scripts.git/install-homebrew-newt.sh"
+$ exec bash "${HOME}/Downloads/opt-install-scripts.git/install-homebrew-newt.sh"
 ```
 
 The alias to add these tools to the PATH is `newt`.
@@ -24,7 +24,7 @@ To run the install script:
 
 ```
 $ caffeinate bash 
-$ exec bash ${HOME}/opt/install-scripts.git/install-homebrew-gme.sh
+$ exec bash ${HOME}/Downloads/opt-install-scripts.git/install-homebrew-gme.sh
 ```
 
 The alias to add these tools to the PATH is `agme`.
@@ -45,7 +45,7 @@ To run the install script:
 
 ```bash
 $ caffeinate bash 
-$ exec bash "${HOME}/opt/install-scripts.git/install-homebrew-gae.sh"
+$ exec bash "${HOME}/Downloads/opt-install-scripts.git/install-homebrew-gae.sh"
 ```
 
 The alias to add these tools to the PATH is `agae`.
@@ -54,3 +54,22 @@ The alias to add these tools to the PATH is `agae`.
 $ alias agae='export PATH=${HOME}/opt/homebrew/gae/bin:${PATH}'
 ```
 
+## homebrew/gcc
+
+This Homebrew instance provides GCC 6 & GCC 7, used during µOS++ test builds.
+
+To run the install script:
+
+```console
+$ caffeinate bash "${HOME}/opt/install-scripts.git/install-homebrew-gcc.sh"
+```
+
+The alias to add these tools to the PATH is `agcc`.
+
+```console
+$ alias agcc='export PATH=${HOME}/opt/homebrew/gcc/bin:${PATH}'
+```
+
+## homebrew/xbb (DEPRECATED)
+
+It was moved to [xpack/xpack-build-box.git](https://github.com/xpack/xpack-build-box).

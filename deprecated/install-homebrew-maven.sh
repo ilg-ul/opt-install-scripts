@@ -50,5 +50,5 @@ brew install maven
 
 # -----------------------------------------------------------------------------
 
-# To use Homebrew, add something like this to ~/.profile
+# To use Homebrew, add something like this to ~/.zprofile
 echo alias amaven=\'export PATH=${HB_PREFIX}/bin:\${PATH}\'
