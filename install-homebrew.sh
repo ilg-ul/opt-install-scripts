@@ -25,28 +25,61 @@ xcode-select -p
 
 # -----------------------------------------------------------------------------
 
-HB_PREFIX=${HB_PREFIX:-"$HOME/opt/homebrew/hb"}
+HB_PREFIX=${HB_PREFIX:-"$HOME/.local/homebrew/hb"}
 export HOMEBREW_NO_EMOJI=1
+
+brew_git_url="https://github.com/Homebrew/brew.git"
+brew_git_commit_id="3.2.11"
+
+homebrew_core_git_url="https://github.com/Homebrew/homebrew-core.git"
+homebrew_core_git_commit_id="1ce3271cff8ae34b6c297c11931e92a47b9130d7"
+
 
 echo "Recreating \"${HB_PREFIX}\"..."
 rm -rf "${HB_PREFIX}"
 mkdir -p "${HB_PREFIX}"
 
-PATH=${HB_PREFIX}/bin:${PATH}
+folder_name="$(basename "${HB_PREFIX}")"
 
-bash -c "(curl -L https://github.com/Homebrew/homebrew/tarball/master | \
-  tar -x -v --strip 1 -C "${HB_PREFIX}" -f -)"
-  
+cd "$(dirname "${HB_PREFIX}")"
+
+echo
+echo "Cloning Homebrew/brew..."
+git clone ${brew_git_url} "${folder_name}"
+
+cd "${folder_name}"
+git checkout -b xbb ${brew_git_commit_id}
+
+cd "${HB_PREFIX}"
+mkdir -p Library/Taps/homebrew
+cd Library/Taps/homebrew
+
+echo
+echo "Cloning Homebrew/homebrew-core..."
+git clone ${homebrew_core_git_url} homebrew-core
+
+cd homebrew-core
+
+echo
+echo "Checking out ${homebrew_core_git_commit_id}"
+git checkout -b xbb ${homebrew_core_git_commit_id}
+
+PATH="${HB_PREFIX}/bin:${PATH}"
+export PATH
+
+hash -r 
+
+# -----------------------------------------------------------------------------
+
 brew --version
-
-echo "Updating homebrew..."
-rm -rf "${HB_PREFIX}/share/doc/homebrew"
-brew update
 
 # -----------------------------------------------------------------------------
 
 # For general usage.
-brew install minicom tree
+brew install minicom 
+brew install tree
+brew install wget
+
 
 # GDB is available from the GCC instance.
 
@@ -57,5 +90,5 @@ brew install cvs
 
 # -----------------------------------------------------------------------------
 
-# To use Homebrew, add something like this to ~/.profile
+# To use Homebrew, add something like this to ~/.zprofile
 echo alias ahb=\'export PATH=${HB_PREFIX}/bin:\${PATH}\'
